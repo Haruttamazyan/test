@@ -59,11 +59,13 @@ module.exports = function(passport) {
                     // create the user
                     let newUserMysql = new Object();
 
+
                     newUserMysql.email = email;
                     newUserMysql.password = database.generatehash(password); // use the generateHash function in our user model
 
-                    let insertQuery = "INSERT INTO users ( email, password ) values ('" + email + "','" + newUserMysql.password + "')";
+                    let insertQuery = "INSERT INTO users ( email, password ) values ('" + newUserMysql.email + "','" + newUserMysql.password + "')";
                     console.log(insertQuery);
+                    //console.log(database.validpassword(password,newUserMysql.password));
                     conn.query(insertQuery, function (err, rows) {
                         newUserMysql.id = rows.insertId;
 
@@ -96,13 +98,13 @@ module.exports = function(passport) {
                     console.log('test');
                     return done(null, false, req.flash('authMessage', 'No user found.')); // req.flash is the way to set flashdata using connect-flash
                 }
-                console.log(rows[0].password);
+                //console.log(rows[0]);
                 // if the user is found but the password is wrong
-/*
+
                 if (!database.validpassword(password,rows[0].password)) {
                     return done(null, false, req.flash('authMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
                 }
-*/
+
 
                 // all is well, return successful user
                 return done(null, rows[0]);
