@@ -36,6 +36,9 @@ require('./routes/auth')(app,passport);
 
 
 
+
+
+
 /*
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -59,7 +62,5 @@ app.use(function(err, req, res, next) {
 app.listen('3000',()=>{
     console.log('sksec 3000');
 })
-
-
 
 
