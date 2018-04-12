@@ -3,7 +3,7 @@
 const hash = require('bcrypt-nodejs');
 // load all the things we need
 const LocalStrategy   = require('passport-local').Strategy;
-const database = require('./database');
+const database = require('./database/database');
 
 const conn = database.connect();
 
@@ -59,11 +59,13 @@ module.exports = function(passport) {
                     // create the user
                     let newUserMysql = new Object();
 
-
+                //console.log(req.body);
+                    newUserMysql.name = req.body.name;
+                    newUserMysql.lastname = req.body.lastname;
                     newUserMysql.email = email;
                     newUserMysql.password = database.generatehash(password); // use the generateHash function in our user model
 
-                    let insertQuery = "INSERT INTO users ( email, password ) values ('" + newUserMysql.email + "','" + newUserMysql.password + "')";
+                    let insertQuery = "INSERT INTO users ( name, lastname ,email, password ) values ('" + newUserMysql.name + "','" + newUserMysql.lastname + "','" + newUserMysql.email + "','" + newUserMysql.password + "')";
                     console.log(insertQuery);
                     //console.log(database.validpassword(password,newUserMysql.password));
                     conn.query(insertQuery, function (err, rows) {

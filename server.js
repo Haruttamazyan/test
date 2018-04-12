@@ -10,12 +10,14 @@ const session      = require('express-session');
 const route = require('./routes/index');
 
 
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 require('./config/passport')(passport);
+
+
+
 
 
 
@@ -32,10 +34,6 @@ app.use(flash());
 
 app.use('/',route);
 require('./routes/auth')(app,passport);
-
-
-
-
 
 
 
