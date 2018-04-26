@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get('/home',isLoggedIn,(req,res)=>{
     //console.log(req.user);
-    res.render('index1.ejs', {
+    res.render('home.ejs', {
         user : req.user // get the user out of session and pass to template
     });
 
@@ -12,6 +12,14 @@ router.get('/home',isLoggedIn,(req,res)=>{
 router.get('/calendar',isLoggedIn,(req,res)=>{
     //console.log(req.user);
     res.render('calendar.ejs', {
+        user : req.user // get the user out of session and pass to template
+    });
+
+});
+
+router.get('/tables',isLoggedIn,(req,res)=>{
+    //console.log(req.user);
+    res.render('tables.ejs', {
         user : req.user // get the user out of session and pass to template
     });
 

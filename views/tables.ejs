@@ -7,12 +7,9 @@
     <link href="https://code.jquery.com/ui/1.10.3/themes/redmond/jquery-ui.css" rel="stylesheet" media="screen">
 
     <!-- Bootstrap -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="vendors/fullcalendar/fullcalendar.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- styles -->
     <link href="css/styles3.css" rel="stylesheet">
-
-    <link href="css/calendar.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -50,8 +47,8 @@
 	                      <li class="dropdown">
 	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
 	                        <ul class="dropdown-menu animated fadeInUp">
-	                          <li><a href="/profile">Profile</a></li>
-	                          <li><a href="/logout">Logout</a></li>
+	                          <li><a href="profile.html">Profile</a></li>
+	                          <li><a href="login.html">Logout</a></li>
 	                        </ul>
 	                      </li>
 	                    </ul>
@@ -69,46 +66,60 @@
                 <ul class="nav">
                     <!-- Main menu -->
                     <li><a href="/"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
-                    <li class="current"><a href="/calendar"><i class="glyphicon glyphicon-calendar"></i> Calendar</a></li>
-                    <li><a href="/tables"><i class="glyphicon glyphicon-tasks"></i> Tables</a></li>
+                    <li><a href="/calendar"><i class="glyphicon glyphicon-calendar"></i> Calendar</a></li>
+                    <li class="current"><a href="tables.ejs"><i class="glyphicon glyphicon-list"></i> Tables</a></li>
 
                 </ul>
              </div>
 		  </div>
 		  <div class="col-md-10">
 
-		  			<div class="content-box-large">
+  				<div class="col-md-12">
+  					<div class="content-box-large">
+		  				<div class="panel-heading">
+							<div class="panel-title">Avagner</div>
+
+							<div class="panel-options">
+								<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-plus"></i></a>
+
+							</div>
+						</div>
 		  				<div class="panel-body">
-		  					<div class="row">
-		  						<div class="col-md-2">
-		  							<div id='external-events'>
-	                                    <h4>Draggable Events</h4>
-	                                    <div class='external-event'>My Event 1</div>
-	                                    <div class='external-event'>My Event 2</div>
-	                                    <div class='external-event'>My Event 3</div>
-	                                    <div class='external-event'>My Event 4</div>
-	                                    <div class='external-event'>My Event 5</div>
-	                                    <div class='external-event'>My Event 6</div>
-	                                    <div class='external-event'>My Event 7</div>
-	                                    <div class='external-event'>My Event 8</div>
-	                                    <div class='external-event'>My Event 9</div>
-	                                    <div class='external-event'>My Event 10</div>
-	                                    <div class='external-event'>My Event 11</div>
-	                                    <div class='external-event'>My Event 12</div>
-	                                    <div class='external-event'>My Event 13</div>
-	                                    <div class='external-event'>My Event 14</div>
-	                                    <div class='external-event'>My Event 15</div>
-	                                    <p>
-	                                    <input type='checkbox' id='drop-remove' /> <label for='drop-remove'>remove after drop</label>
-	                                    </p>
-                                    </div>
-		  						</div>
-		  						<div class="col-md-10">
-		  							<div id='calendar'></div>
-		  						</div>
-		  					</div>
+		  					<table class="table table-striped">
+				              <thead>
+				                <tr>
+
+				                  <th>First Name</th>
+				                  <th>Last Name</th>
+				                  <th>Xumb</th>
+				                  <th>Heraxos</th>
+				                  <th>email</th>
+				                </tr>
+				              </thead>
+				              <tbody>
+				                <tr>
+
+				                  <td>Mark</td>
+				                  <td>Otto</td>
+				                  <td>Otto</td>
+				                  <td>@mdo</td>
+				                  <td>@mdo</td>
+
+				                </tr>
+
+				              </tbody>
+				            </table>
 		  				</div>
 		  			</div>
+  				</div>
+  			</div>
+
+
+
+
+
+
+
 
 
 		  </div>
@@ -125,19 +136,14 @@
          </div>
       </footer>
 
+
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
 
-    <!-- jQuery UI -->
-    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
-    <script src="vendors/fullcalendar/fullcalendar.js"></script>
-    <script src="vendors/fullcalendar/gcal.js"></script>
-<!--
-    <script src="js/custom1.js"></script>
--->
-    <script src="js/calendar.js"></script>
+    <!--<script src="js/custom1.js"></script>-->
+
   </body>
 </html>
